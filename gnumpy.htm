@@ -1,0 +1,52 @@
+
+<!-- saved from url=(0045)http://www.cs.toronto.edu/~tijmen/gnumpy.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><title>gnumpy</title>
+
+</head><body><h1>gnumpy</h1>
+
+(There are translations of Gnumpy into various other languages; if you're looking for a translation I suggest a web search)<br><br>
+
+
+
+
+Gnumpy is free software, but if you use it in scientific work that gets published, you should cite <a href="http://www.cs.toronto.edu/~tijmen/gnumpyTr.pdf">this tech report</a> in your publication.<br><br>
+
+Download: <a href="http://www.cs.toronto.edu/~tijmen/gnumpy.py">gnumpy.py</a> (also be sure to have the most recent version of Cudamat) <br>
+Documentation: <a href="http://www.cs.toronto.edu/~tijmen/gnumpyDoc.html">here</a>.<br><br>
+
+<br><br>
+
+Do you want to have both the compute power of GPU's and the programming convenience of Python numpy? Gnumpy + Cudamat will bring you that.<br><br>
+
+Gnumpy is a simple Python module that interfaces in a way almost identical to numpy, but does its computations on your computer's
+GPU. See <a href="http://www.cs.toronto.edu/~tijmen/gnumpy_example.py">this example</a>, training an RBM using Gnumpy.<br><br>
+
+Gnumpy runs on top of, and therefore requires, the excellent <a href="http://code.google.com/p/cudamat/">cudamat</a> library, written by
+<a href="http://www.cs.toronto.edu/~vmnih/">Vlad Mnih</a>.<br><br>
+
+Gnumpy can run in simulation mode: everything happens on the CPU, but the interface is the same. This can be helpful if you like to write your
+programs on your GPU-less laptop before running them on a GPU-equipped machine. It also allows you to easily test what performance gain you get from
+using a GPU. The simulation mode requires <a href="http://www.cs.toronto.edu/~ilya/npmat.py">npmat</a>, written by
+<a href="http://www.cs.toronto.edu/~ilya">Ilya Sutskever</a>.<br><br>
+
+Gnumpy is licensed with a BSD-style license (i.e. it's completely free to use for everyone, also as a component in commercial software), with one
+added note: if you use it for scientific work that gets published, you must include reference to the Gnumpy tech report in your publication. For
+details of the license, see the top of gnumpy.py.<br><br>
+
+See also this <a href="https://twitter.com/xavier_arrufat/status/299810134627086336">presentation</a> by Xavier Arrufat, introducing numpy at the Python for Data Analysis meetup in Barcelona, 2013.<br><br>
+
+Recent changes:<ul>
+<li> 2013-02-22: Bugfixes in max() and log_1_plus_exp() that only affected behavior when no GPU was used.
+</li><li> 2012-07-25: Bugfix. gnumpy.dot(x, x), when x is a 1-dimensional array, didn't work but now works.
+</li><li> 2011-06-06: gnumpy.dot() now takes arrays of ndim&gt;2.
+</li><li> 2011-04-19: Bugfix: several bugs involving zero size arrays were fixed.
+</li><li> 2011-04-15: Bugfix. "x=gnumpy.zeros(10); x[array([])] = garray([])" didn't work as it should. Now it does.
+</li><li> 2011-03-24: Added gnumpy.outer().
+</li><li> 2011-03-15: The ability to check for infs and nans automatically has been added to Gnumpy.
+</li><li> 2010-07-19: Cudamat now enables fast indexing with arrays of indices. Download the newest Cudamat to have fast indexing with arrays in Gnumpy.
+</li><li> 2010-07-08: Renamed the project to Gnumpy. It used to be called Gpunnumpy.
+</li></ul>
+
+
+<br><br><br><br><a href="http://www.cs.toronto.edu/~tijmen/">Home page</a>
+</body></html>
